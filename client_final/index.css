@@ -1,0 +1,84 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #000; /* 배경을 검은색으로 설정 */
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  font-family: "Nanum Gothic", sans-serif;
+  margin: 0;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.fade-in {
+  opacity: 0; /* 처음에 요소를 보이지 않게 설정 */
+  transform: translateY(20px); /* 요소를 아래로 20px 이동 */
+  transition: opacity 1s ease-out, transform 1s ease-out; /* 1초 동안 천천히 변화 */
+}
+
+.fade-in.visible {
+  opacity: 1; /* 요소를 완전히 보이게 설정 */
+  transform: translateY(0); /* 요소를 원래 위치로 이동 */
+}
+
+#home-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#home-image {
+  width: 80px;
+  height: 60px;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font-size: 16px;
+  position: absolute;
+  right: 20px;
+}
+
+.ai-poster-button {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font-size: 16px;
+  position: absolute;
+  left: 120px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+.fade-in img {
+  width: 100%;
+  height: auto;
+  display: block;
+}

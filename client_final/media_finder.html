@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Artify</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      type="text/javascript"
+      src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=qgNN2C26BUwJ1-myOKB2B4lllgqXl9pY8Ws8z0us72yD7vXhORNC3xq2xR0lAFabp38d828Er3JAw6lULWxC0pHKGiazB1IqhRcT8BAgLSiHoH9nX0A4mrVmhbkMpcwZixaBNUlI9hcwgxMAbeCqQu30HHMFWROYjsYLC_7g3x5ew8JnQPb_CZ7CwuBJxyzHksR47PDWCUIETusFpVpspxE-Svow6jt92RntInAPSCOh7wfzMQQc3eKaJufhC-0KvvMsJBnJoniC-ErgqrOBmA"
+      charset="UTF-8"
+    ></script>
+    <script type="text/javascript" src="script.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="home-button">
+        <a href="Project.html">
+          <img src="image2.png" alt="Home" />
+        </a>
+      </div>
+      <div class="search-container">
+        <button class="AIgallery" onclick="location.href='index.html'">
+          AI 갤러리
+        </button>
+        <button
+          class="ai-poster-button"
+          onclick="location.href='movie_poster_generator.html'"
+        >
+          나만의 AI 포스터 생성
+        </button>
+        <button id="randomMedia" class="btn"><span>랜덤</span></button>
+        <button id="popularMedia" class="btn"><span>인기작품</span></button>
+        <button id="nowPlayingMedia" class="btn"><span>상영중</span></button>
+        <input type="text" id="search" placeholder="검색어를 입력하세요" />
+        <button id="findMedia">검색</button>
+      </div>
+    </header>
+    <main>
+      <aside class="filter-container">
+        <h3>장르</h3>
+        <div class="genre-filter">
+          <button class="genre-btn" data-genre="878">SF</button>
+          <button class="genre-btn" data-genre="10770">TV 영화</button>
+          <button class="genre-btn" data-genre="10751">가족</button>
+          <button class="genre-btn" data-genre="27">공포</button>
+          <button class="genre-btn" data-genre="99">다큐멘터리</button>
+          <button class="genre-btn" data-genre="18">드라마</button>
+          <button class="genre-btn" data-genre="10749">로맨스</button>
+          <button class="genre-btn" data-genre="12">모험</button>
+          <button class="genre-btn" data-genre="9648">미스터리</button>
+          <button class="genre-btn" data-genre="80">범죄</button>
+          <button class="genre-btn" data-genre="37">서부</button>
+          <button class="genre-btn" data-genre="53">스릴러</button>
+          <button class="genre-btn" data-genre="16">애니메이션</button>
+          <button class="genre-btn" data-genre="28">액션</button>
+          <button class="genre-btn" data-genre="36">역사</button>
+          <button class="genre-btn" data-genre="10402">음악</button>
+          <button class="genre-btn" data-genre="10752">전쟁</button>
+          <button class="genre-btn" data-genre="35">코미디</button>
+          <button class="genre-btn" data-genre="14">판타지</button>
+        </div>
+      </aside>
+      <div class="media-sections">
+        <section class="media-section" id="movie-section">
+          <h2>MOVIE</h2>
+          <div class="media-grid" id="movie-grid">
+            <!-- 영화 데이터가 여기에 표시됩니다 -->
+          </div>
+          <button class="show-more" id="show-more-movie">더 보기</button>
+        </section>
+        <section class="media-section" id="tv-section">
+          <h2>TV SHOW</h2>
+          <div class="media-grid" id="tv-grid">
+            <!-- TV 쇼 데이터가 여기에 표시됩니다 -->
+          </div>
+          <button class="show-more" id="show-more-tv">더 보기</button>
+        </section>
+      </div>
+      <aside class="ad-banner">
+        <img src="image1.png" alt="광고 배너" />
+      </aside>
+    </main>
+
+    <!-- Modal for Poster and Overview -->
+    <div id="posterModal" class="modal">
+      <div class="modal-content" id="poster-modal-content">
+        <span class="modal-close">&times;</span>
+        <img id="popup-image" src="" alt="Popup Image" />
+        <div class="modal-text" id="popup-text"></div>
+      </div>
+    </div>
+
+    <!-- Modal for Trailer -->
+    <div id="trailerModal" class="modal">
+      <div class="modal-content" id="trailer-modal-content">
+        <span class="modal-close">&times;</span>
+        <iframe
+          id="trailer-container"
+          src=""
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+
+    <!-- Combined Modal -->
+    <div id="combinedModal" class="modal">
+      <div class="modal-content combined-modal-content">
+        <span class="modal-close">&times;</span>
+        <div class="modal-row">
+          <div class="modal-column">
+            <img id="combined-popup-image" src="" alt="Popup Image" />
+            <div class="modal-text" id="combined-popup-text"></div>
+          </div>
+          <div class="modal-column">
+            <iframe
+              id="combined-trailer-container"
+              src=""
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

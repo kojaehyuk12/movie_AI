@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Artify</title>
+    <link rel="stylesheet" href="movie_poster_generator.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
+    </style>
+    <script
+      type="text/javascript"
+      src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=AdpYO4kjx26UB4Ko-Xcrwu3GI5Pdw4lLOq1s9_baJznoKpwmztqQYfHc4fi-YVyeAmTp4OSvMC9DC5ewojyMLGzu5BYZavaJzVnpoWDi-T_9p0eehUESneW1Djoe4u5hFXWEMwcWcDVm1Ghnpl-H61nCeTPsW1tD6_YwSrqvFTM4buL4jikgRek5teLbpjDvo2tnrTAi9tlv0i-GQ8VHff-_ztxKMbarh6iGioh3oTY-5Vmn52-vT32098z0lV_5CQ4x1ERjiSl8TT7_7GCSzMzq-wFFnAp7VwGxT1xWW1k"
+      charset="UTF-8"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <button id="home-button" onclick="window.location.href='Project.html'">
+        <img src="image2.png" alt="Home" id="home-image" />
+      </button>
+      <button class="AIgallery" onclick="location.href='index.html'">
+        AI 갤러리
+      </button>
+      <h1>나만의 AI 포스터 생성</h1>
+    </header>
+    <main>
+      <div class="container">
+        <div class="intro-text">
+          <p>AI 그림 생성하기</p>
+          <p class="subtext">
+            구체적으로 그림의 내용을 묘사할수록 그림의 완성도가 높아집니다
+          </p>
+        </div>
+        <div class="input-container">
+          <textarea
+            id="description"
+            placeholder="AI가 생성할 그림에 대한 설명을 입력하세요"
+          ></textarea>
+          <button id="generate-drawing">생성하기</button>
+        </div>
+        <div class="result-container" id="result-container">
+          <!-- Drawing results will be displayed here -->
+        </div>
+        <div class="loader" id="loader"></div>
+        <div id="filter-container" class="filter-container hidden">
+          <button id="filter-movies">Movies</button>
+          <button id="filter-tv">TV Shows</button>
+          <button id="filter-all">All</button>
+          <select id="genre-filter">
+            <option value="all">All Genres</option>
+          </select>
+        </div>
+        <div class="poster-results-container" id="poster-results-container">
+          <!-- Poster results will be displayed here -->
+        </div>
+        <div id="search-keywords" class="search-keywords">
+          <!-- Search keywords will be displayed here -->
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>&copy; 2024 AI Artify. All rights reserved.</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </footer>
+
+    <!-- Modal for Poster and Overview -->
+    <div id="projectPosterModal" class="modal">
+      <div class="modal-content" id="project-poster-modal-content">
+        <span class="modal-close">&times;</span>
+        <img id="project-popup-image" src="" alt="Popup Image" />
+        <div class="modal-text" id="project-popup-text"></div>
+      </div>
+    </div>
+
+    <!-- Modal for Trailer -->
+    <div id="projectTrailerModal" class="modal">
+      <div class="modal-content" id="project-trailer-modal-content">
+        <span class="modal-close">&times;</span>
+        <iframe
+          id="project-trailer-container"
+          src=""
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+
+    <!-- Combined Modal -->
+    <div id="projectCombinedModal" class="modal">
+      <div class="modal-content combined-modal-content">
+        <span class="modal-close">&times;</span>
+        <div class="modal-row">
+          <div class="modal-column">
+            <img id="project-combined-popup-image" src="" alt="Popup Image" />
+            <div class="modal-text" id="project-combined-popup-text"></div>
+          </div>
+          <div class="modal-column">
+            <iframe
+              id="project-combined-trailer-container"
+              src=""
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="movie_poster_generator.js"></script>
+  </body>
+</html>

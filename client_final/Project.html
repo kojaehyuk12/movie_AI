@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Artify</title>
+    <link rel="stylesheet" type="text/css" href="project.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+  </head>
+  <tbody>
+    <div id="container">
+      <div class="spacer"></div>
+      <div class="spacer"></div>
+      <img class="fade-in" id="logo" src="image2.png" alt="로고" />
+      <form
+        class="fade-in"
+        id="search-form"
+        action="media_finder.html"
+        method="GET"
+      >
+        <input
+          id="search-input"
+          type="text"
+          name="q"
+          placeholder="Search your media"
+        />
+        <button id="search-button" type="submit">
+          <i class="fas fa-film"></i>
+        </button>
+      </form>
+      <div class="fade-in" id="categories">
+        <div
+          class="category"
+          id="ai-drawing"
+          onclick="window.location.href='movie_poster_generator.html'"
+        >
+          <i class="fas fa-robot"></i>
+          <p>AI drawing</p>
+          <p class="description">
+            나만의 포스터를<br />
+            만들어 보세요
+          </p>
+        </div>
+      </div>
+      <div class="spacer"></div>
+      <!-- 추가된 섹션 시작 -->
+      <div class="fade-in" id="media-sections">
+        <h2>인기 영화</h2>
+        <div class="carousel">
+          <button class="prev-button">&#9664;</button>
+          <div id="popular-movies" class="media-grid"></div>
+          <button class="next-button">&#9654;</button>
+        </div>
+
+        <h2>인기 드라마</h2>
+        <div class="carousel">
+          <button class="prev-button">&#9664;</button>
+          <div id="popular-tv-shows" class="media-grid"></div>
+          <button class="next-button">&#9654;</button>
+        </div>
+
+        <h2>상영 중인 영화</h2>
+        <div class="carousel">
+          <button class="prev-button">&#9664;</button>
+          <div id="now-playing-movies" class="media-grid"></div>
+          <button class="next-button">&#9654;</button>
+        </div>
+      </div>
+      <!-- 추가된 섹션 끝 -->
+    </div>
+    <footer>
+      <p>&copy; 2024 AI Artify. All rights reserved.</p>
+      <div class="social-links">
+        <a href="#">Facebook</a>
+        <a href="#">Twitter</a>
+        <a href="#">Instagram</a>
+      </div>
+    </footer>
+
+    <!-- Modal for Poster and Overview -->
+    <div id="projectPosterModal" class="modal">
+      <div class="modal-content" id="project-poster-modal-content">
+        <span class="modal-close">&times;</span>
+        <img id="project-popup-image" src="" alt="Popup Image" />
+        <div class="modal-text" id="project-popup-text"></div>
+      </div>
+    </div>
+
+    <!-- Modal for Trailer -->
+    <div id="projectTrailerModal" class="modal">
+      <div class="modal-content" id="project-trailer-modal-content">
+        <span class="modal-close">&times;</span>
+        <iframe
+          id="project-trailer-container"
+          src=""
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+
+    <!-- Combined Modal -->
+    <div id="projectCombinedModal" class="modal">
+      <div class="modal-content combined-modal-content">
+        <span class="modal-close">&times;</span>
+        <div class="modal-row">
+          <div class="modal-column">
+            <img id="project-combined-popup-image" src="" alt="Popup Image" />
+            <div class="modal-text" id="project-combined-popup-text"></div>
+          </div>
+          <div class="modal-column">
+            <iframe
+              id="project-combined-trailer-container"
+              src=""
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="project.js"></script>
+  </tbody>
+</html>

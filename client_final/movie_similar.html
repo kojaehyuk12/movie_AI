@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Artify</title>
+    <link rel="stylesheet" href="movie_similar.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
+    </style>
+    <script
+      type="text/javascript"
+      src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=f-rmbEkWd-QkVnLEzv_WaPP4bAKsJ76hS6z7BDq9KCWIcmgVxt4zy5_lj1jLr6Ge-wUPy8SJTG45Vdd4uZVOdxeJ0zNh7D3exlho0GE8DfuNu2lbIKEdIxCnmiEV4e07UA9hOOAzIWAq2deKuSy2ez8INSN61DYYQnjse4sZotDsyuACCuCdyOsDsGgyPNDpEr3UBmhkBwlfu2Yyp08_3OeiwhlEpSlKqLns3pc4Hfa-OMfeyZ2OD4EkBOIeMwGv8nfVRa7KkyCHJmWxRunyAQ"
+      charset="UTF-8"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=j3LlFkuewJ-DioTt_ym28I090VL3d_GaMELRP0PlDRVkVzqnRmsa1UprIr_wOcgCkK9c5w7pTGEq-dZoEPzT0-q7AE8IcHxS7yzSuMCeoYmzvclKkhEhbToajjRpUEPsk8mMypdHoC_2UHE6b-lfPokGTSpOrnirxu8Uf_rMcTsb9bLt7qBv-wpejfFV-LiSBvgA0Vegm6GNNxLfDSLYxFPupnubgns2GElz5KejbdP3i2wBStcY-JH-pz5r4pT4V_Fgk2JKuPvQlsYaR6h9Vw"
+      charset="UTF-8"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <a href="Project.html">
+        <img src="image2.png" alt="Project Image" class="header-image" />
+      </a>
+      <h1>포스터로 AI 그림 생성</h1>
+      <button class="back-button" onclick="history.back()">Back</button>
+      <button
+        class="ai-poster-button"
+        onclick="location.href='movie_poster_generator.html'"
+      >
+        나만의 AI 포스터 생성
+      </button>
+    </header>
+    <div class="container">
+      <div class="image-wrapper">
+        <div class="image-container">
+          <img id="movie-image" src="" alt="" />
+        </div>
+        <div class="ai-image-container">
+          <div id="ai-results-container"></div>
+          <div id="ai-loading" class="loading-spinner"></div>
+        </div>
+      </div>
+      <button id="search-similar-posters" class="button">
+        <p class="btnText">AI 그림 생성</p>
+        <div class="btnTwo">
+          <p class="btnText2">생성 시작!</p>
+        </div>
+      </button>
+      <div class="results-container">
+        <div class="results-section" id="vision-results-container">
+          <h2>유사한 이미지</h2>
+          <div id="vision-loading" class="loading-spinner"></div>
+        </div>
+        <div class="results-section" id="tmdb-results-container">
+          <h2>추천 영화</h2>
+          <div id="tmdb-loading" class="loading-spinner"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="posterModal" class="modal">
+      <div class="modal-content" id="poster-modal-content">
+        <span class="modal-close">&times;</span>
+        <img id="popup-image" src="" alt="Popup Image" />
+        <div class="modal-text" id="popup-text"></div>
+      </div>
+    </div>
+
+    <div id="trailerModal" class="modal">
+      <div class="modal-content" id="trailer-modal-content">
+        <span class="modal-close">&times;</span>
+        <iframe
+          id="trailer-container"
+          src=""
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+
+    <div id="combinedModal" class="modal">
+      <div class="modal-content combined-modal-content">
+        <span class="modal-close">&times;</span>
+        <div class="modal-row">
+          <div class="modal-column">
+            <img id="combined-popup-image" src="" alt="Popup Image" />
+            <div class="modal-text" id="combined-popup-text"></div>
+          </div>
+          <div class="modal-column">
+            <iframe
+              id="combined-trailer-container"
+              src=""
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="movie_similar.js"></script>
+  </body>
+</html>
