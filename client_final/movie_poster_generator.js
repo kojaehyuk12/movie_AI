@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const movieApiKey = "f742807187da80a491683b620672de02";
-  const gptApiKey = "sk-proj-nsntiCNHFBspv0tMFzhQT3BlbkFJ1sdU6qVp8OvXa7jJhaU9";
-  const visionApiKey = "AIzaSyBVkcvywur8secZimNar3_5yQgw--duQkc";
-  const translateApiKey = "AIzaSyAe12KEEGVs_FqB1KYHXWLOt51noFFiok4";
+  const movieApiKey = " // 여기에 TMDB API 키를 입력하세요.";
+  const visionApiKey = ""; // 여기에 Google Cloud Vision API 키를 입력하세요.
+  const gptApiKey = ''; // 여기에 OpenAI API 키 (GPT)를 입력하세요.
+  const translateApiKey = ""; // 여기에 Google Cloud Translate API 키를 입력하세요.
   const resultContainer = document.getElementById("result-container");
   const posterResultsContainer = document.getElementById(
     "poster-results-container"
